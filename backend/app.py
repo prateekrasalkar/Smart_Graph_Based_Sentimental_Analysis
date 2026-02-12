@@ -184,10 +184,5 @@ def get_graph():
         return jsonify({"error": str(e)}), 500
 
     
-
-@app.teardown_appcontext
-def close_connection(exception):
-    neo4j_handler.close()
-
 if __name__ == "__main__":
     app.run(debug=True, port=5001)
